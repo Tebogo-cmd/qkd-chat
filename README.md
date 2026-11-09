@@ -42,9 +42,10 @@ Requires Python 3.10+ (developed and tested on Python 3.13, Qiskit 2.6, Qiskit A
 `requirements.txt` pins these versions so that the results can be reproduced).
 
 ```bash
-git clone https://github.com/<your-username>/qkd-chat.git && cd qkd-chat
+git clone https://github.com/Tebogo-cmd/qkd-chat.git && cd qkd-chat
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
+pip install -e .
 pytest -q                                              # 27 passed
 ```
 

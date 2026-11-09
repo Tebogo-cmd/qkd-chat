@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qkdchat"
+version = "1.0.0"
+description = "Hybrid quantum-classical BB84 QKD chat application built with Qiskit (CPUT Honours research artefact)"
+authors = [{ name = "Tebogo Diraditsile" }]
+requires-python = ">=3.10"
+dependencies = ["qiskit>=2.0", "qiskit-aer>=0.17", "qiskit-ibm-runtime>=0.40", "numpy>=1.26", "cryptography>=42", "rich>=13"]
+
+[project.scripts]
+qkdchat = "qkdchat.cli:main"
+
+[tool.setuptools]
+packages = ["qkdchat"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120

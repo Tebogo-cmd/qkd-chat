@@ -1,0 +1,12 @@
+# Versions used to produce the reported results (Python 3.13)
+qiskit~=2.6.0
+qiskit-aer~=0.18.0
+qiskit-ibm-runtime~=0.51.0
+numpy>=1.26
+cryptography>=42
+rich>=13
+matplotlib>=3.8
+pandas>=2.0
+pylatexenc>=2.10
+jupyter
+pytest>=8

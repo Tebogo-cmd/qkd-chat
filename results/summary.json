@@ -1,0 +1,557 @@
+{
+  "E1": [
+    {
+      "f": 0.0,
+      "qber": 0.0,
+      "ci": 0.0,
+      "theory": 0.0,
+      "abort_rate": 0.0,
+      "eve_before": 0.4910482837967433,
+      "eve_after": 0.49904028009267387
+    },
+    {
+      "f": 0.1,
+      "qber": 0.025717408225759176,
+      "ci": 0.003925654591583116,
+      "theory": 0.025,
+      "abort_rate": 0.0,
+      "eve_before": 0.5212567653971519,
+      "eve_after": 0.5244297346200346
+    },
+    {
+      "f": 0.2,
+      "qber": 0.05091679899379561,
+      "ci": 0.004050679031959829,
+      "theory": 0.05,
+      "abort_rate": 0.0,
+      "eve_before": 0.5558305928583528,
+      "eve_after": 0.51663921373633
+    },
+    {
+      "f": 0.3,
+      "qber": 0.0736604915947278,
+      "ci": 0.007574921318259462,
+      "theory": 0.075,
+      "abort_rate": 0.3,
+      "eve_before": 0.573833723941823,
+      "eve_after": 0.5593111534531011
+    },
+    {
+      "f": 0.4,
+      "qber": 0.10523566256505826,
+      "ci": 0.009088111690768072,
+      "theory": 0.1,
+      "abort_rate": 1.0,
+      "eve_before": 0.5982588209468921,
+      "eve_after": NaN
+    },
+    {
+      "f": 0.5,
+      "qber": 0.12684179982908517,
+      "ci": 0.0025198194285827387,
+      "theory": 0.125,
+      "abort_rate": 1.0,
+      "eve_before": 0.6266094492890227,
+      "eve_after": NaN
+    },
+    {
+      "f": 0.6,
+      "qber": 0.15161299264388892,
+      "ci": 0.008837156226420577,
+      "theory": 0.15,
+      "abort_rate": 1.0,
+      "eve_before": 0.6430227801472329,
+      "eve_after": NaN
+    },
+    {
+      "f": 0.7,
+      "qber": 0.17496578627696438,
+      "ci": 0.011024175490366843,
+      "theory": 0.175,
+      "abort_rate": 1.0,
+      "eve_before": 0.6723235382411641,
+      "eve_after": NaN
+    },
+    {
+      "f": 0.8,
+      "qber": 0.19588135682263288,
+      "ci": 0.010124818007636708,
+      "theory": 0.2,
+      "abort_rate": 1.0,
+      "eve_before": 0.6960446803367468,
+      "eve_after": NaN
+    },
+    {
+      "f": 0.9,
+      "qber": 0.21733182760525124,
+      "ci": 0.011345706285852028,
+      "theory": 0.225,
+      "abort_rate": 1.0,
+      "eve_before": 0.7313545575646738,
+      "eve_after": NaN
+    },
+    {
+      "f": 1.0,
+      "qber": 0.2533778547989441,
+      "ci": 0.013801333882629102,
+      "theory": 0.25,
+      "abort_rate": 1.0,
+      "eve_before": 0.7507243738642,
+      "eve_after": NaN
+    }
+  ],
+  "E2": [
+    {
+      "p": 0.0,
+      "qber": 0.0,
+      "qber_ci": 0.0,
+      "expected": 0.0,
+      "rate": 0.3498046875,
+      "rate_ci": 0.0028442064228738537,
+      "abort_rate": 0.0
+    },
+    {
+      "p": 0.025,
+      "qber": 0.013049656977296237,
+      "qber_ci": 0.0015018794746374676,
+      "expected": 0.0125,
+      "rate": 0.281591796875,
+      "rate_ci": 0.006892470877857261,
+      "abort_rate": 0.0
+    },
+    {
+      "p": 0.05,
+      "qber": 0.027135777382627672,
+      "qber_ci": 0.0016756429051465258,
+      "expected": 0.025,
+      "rate": 0.212890625,
+      "rate_ci": 0.01052951859637172,
+      "abort_rate": 0.0
+    },
+    {
+      "p": 0.075,
+      "qber": 0.03841936291762223,
+      "qber_ci": 0.0016179134929757578,
+      "expected": 0.0375,
+      "rate": 0.1606201171875,
+      "rate_ci": 0.01057615759275127,
+      "abort_rate": 0.0
+    },
+    {
+      "p": 0.1,
+      "qber": 0.04754921010952644,
+      "qber_ci": 0.0028776751088723873,
+      "expected": 0.05,
+      "rate": 0.1187744140625,
+      "rate_ci": 0.016199990044762125,
+      "abort_rate": 0.0
+    },
+    {
+      "p": 0.125,
+      "qber": 0.06309781846565603,
+      "qber_ci": 0.004186528405177552,
+      "expected": 0.0625,
+      "rate": 0.0816650390625,
+      "rate_ci": 0.016573696438619008,
+      "abort_rate": 0.0
+    },
+    {
+      "p": 0.15,
+      "qber": 0.07555651001568123,
+      "qber_ci": 0.0027831770834677583,
+      "expected": 0.075,
+      "rate": 0.0356689453125,
+      "rate_ci": 0.013607103160346834,
+      "abort_rate": 0.1
+    },
+    {
+      "p": 0.175,
+      "qber": 0.08546124675584595,
+      "qber_ci": 0.003730953889669398,
+      "expected": 0.0875,
+      "rate": 0.0078857421875,
+      "rate_ci": 0.00712367117910516,
+      "abort_rate": 0.5
+    },
+    {
+      "p": 0.2,
+      "qber": 0.10067398371951741,
+      "qber_ci": 0.00685047251735363,
+      "expected": 0.1,
+      "rate": 0.0,
+      "rate_ci": 0.0,
+      "abort_rate": 1.0
+    },
+    {
+      "p": 0.225,
+      "qber": 0.11521030608258602,
+      "qber_ci": 0.004378290766459122,
+      "expected": 0.1125,
+      "rate": 0.0,
+      "rate_ci": 0.0,
+      "abort_rate": 1.0
+    },
+    {
+      "p": 0.25,
+      "qber": 0.12240884224714352,
+      "qber_ci": 0.0064968469275612705,
+      "expected": 0.125,
+      "rate": 0.0,
+      "rate_ci": 0.0,
+      "abort_rate": 1.0
+    },
+    {
+      "p": 0.275,
+      "qber": 0.1366614614757043,
+      "qber_ci": 0.005248714188863583,
+      "expected": 0.1375,
+      "rate": 0.0,
+      "rate_ci": 0.0,
+      "abort_rate": 1.0
+    },
+    {
+      "p": 0.3,
+      "qber": 0.15241383568943437,
+      "qber_ci": 0.0065617416684536556,
+      "expected": 0.15,
+      "rate": 0.0,
+      "rate_ci": 0.0,
+      "abort_rate": 1.0
+    }
+  ],
+  "E3": [
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 1,
+      "empirical": 0.255,
+      "theory": 0.25
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 2,
+      "empirical": 0.4335,
+      "theory": 0.4375
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 4,
+      "empirical": 0.6755,
+      "theory": 0.68359375
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 8,
+      "empirical": 0.882,
+      "theory": 0.8998870849609375
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 12,
+      "empirical": 0.97,
+      "theory": 0.9683236479759216
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 16,
+      "empirical": 0.987,
+      "theory": 0.9899774042423815
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 24,
+      "empirical": 0.999,
+      "theory": 0.9989966087224467
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 32,
+      "empirical": 1.0,
+      "theory": 0.9998995475742793
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 48,
+      "empirical": 1.0,
+      "theory": 0.9999989932059441
+    },
+    {
+      "intercept_fraction": 1.0,
+      "sample_bits": 64,
+      "empirical": 1.0,
+      "theory": 0.9999999899093102
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 1,
+      "empirical": 0.11,
+      "theory": 0.125
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 2,
+      "empirical": 0.238,
+      "theory": 0.234375
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 4,
+      "empirical": 0.4185,
+      "theory": 0.413818359375
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 8,
+      "empirical": 0.688,
+      "theory": 0.6563910841941833
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 12,
+      "empirical": 0.792,
+      "theory": 0.7985827619995689
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 16,
+      "empirical": 0.8745,
+      "theory": 0.8819329129787512
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 24,
+      "empirical": 0.9575,
+      "theory": 0.9594310962362776
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 32,
+      "empirical": 0.9895,
+      "theory": 0.9860601629623169
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 48,
+      "empirical": 0.9995,
+      "theory": 0.9983541640474098
+    },
+    {
+      "intercept_fraction": 0.5,
+      "sample_bits": 64,
+      "empirical": 1.0,
+      "theory": 0.9998056809433629
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 1,
+      "empirical": 0.064,
+      "theory": 0.050000000000000044
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 2,
+      "empirical": 0.102,
+      "theory": 0.09750000000000003
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 4,
+      "empirical": 0.2125,
+      "theory": 0.18549375000000012
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 8,
+      "empirical": 0.3345,
+      "theory": 0.33657956871093775
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 12,
+      "empirical": 0.459,
+      "theory": 0.45963991233736334
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 16,
+      "empirical": 0.58,
+      "theory": 0.5598733313482347
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 24,
+      "empirical": 0.7185,
+      "theory": 0.7080109756612276
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 32,
+      "empirical": 0.818,
+      "theory": 0.8062885155414992
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 48,
+      "empirical": 0.933,
+      "theory": 0.9147424096656918
+    },
+    {
+      "intercept_fraction": 0.2,
+      "sample_bits": 64,
+      "empirical": 0.9655,
+      "theory": 0.962475860788884
+    }
+  ],
+  "E4": {
+    "scaling": [
+      {
+        "n_qubits": 256,
+        "simulate_s": 0.014989916999979869,
+        "total_s": 0.021579139999857944,
+        "final_length": 0
+      },
+      {
+        "n_qubits": 512,
+        "simulate_s": 0.030229976999976316,
+        "total_s": 0.042788350999899194,
+        "final_length": 95
+      },
+      {
+        "n_qubits": 1024,
+        "simulate_s": 0.06149198200000683,
+        "total_s": 0.08681946599995172,
+        "final_length": 289
+      },
+      {
+        "n_qubits": 2048,
+        "simulate_s": 0.11870590500006983,
+        "total_s": 0.1836798159999944,
+        "final_length": 647
+      },
+      {
+        "n_qubits": 4096,
+        "simulate_s": 0.2357370309999851,
+        "total_s": 0.3663168099998302,
+        "final_length": 1433
+      },
+      {
+        "n_qubits": 8192,
+        "simulate_s": 0.44762419799997133,
+        "total_s": 0.8608269089999112,
+        "final_length": 2969
+      },
+      {
+        "n_qubits": 16384,
+        "simulate_s": 0.9546483770000123,
+        "total_s": 2.266106726999851,
+        "final_length": 6074
+      },
+      {
+        "n_qubits": 32768,
+        "simulate_s": 1.8373544150000498,
+        "total_s": 6.848710361000144,
+        "final_length": 12224
+      }
+    ],
+    "methods": [
+      {
+        "method": "stabilizer",
+        "qubits_per_circuit": 256,
+        "circuits": 4,
+        "seconds_per_1024_qubits": 0.06969782733331915
+      },
+      {
+        "method": "matrix_product_state",
+        "qubits_per_circuit": 256,
+        "circuits": 4,
+        "seconds_per_1024_qubits": 0.05189511733332589
+      },
+      {
+        "method": "statevector",
+        "qubits_per_circuit": 16,
+        "circuits": 64,
+        "seconds_per_1024_qubits": 0.36737638366666187
+      },
+      {
+        "method": "density_matrix",
+        "qubits_per_circuit": 8,
+        "circuits": 128,
+        "seconds_per_1024_qubits": 0.7249179756666612
+      }
+    ]
+  },
+  "E5": [
+    {
+      "backend": "fake_brisbane",
+      "qber": 0.031370091234626356,
+      "key_rate": 0.18522135416666666,
+      "abort_rate": 0.0,
+      "simulate_s": 2.5220601273333614
+    },
+    {
+      "backend": "fake_sherbrooke",
+      "qber": 0.03738432234560062,
+      "key_rate": 0.12386067708333333,
+      "abort_rate": 0.0,
+      "simulate_s": 2.4939989993333334
+    },
+    {
+      "backend": "fake_torino",
+      "qber": 0.04634470104044303,
+      "key_rate": 0.11865234375,
+      "abort_rate": 0.0,
+      "simulate_s": 3.796655593666628
+    }
+  ],
+  "E6": [
+    {
+      "qber": 0.005,
+      "f": 1.1122862636993884,
+      "success": 1.0
+    },
+    {
+      "qber": 0.01,
+      "f": 1.1190919468829919,
+      "success": 1.0
+    },
+    {
+      "qber": 0.02,
+      "f": 1.1461650958342207,
+      "success": 1.0
+    },
+    {
+      "qber": 0.03,
+      "f": 1.1525493348099305,
+      "success": 1.0
+    },
+    {
+      "qber": 0.05,
+      "f": 1.1662495978504783,
+      "success": 1.0
+    },
+    {
+      "qber": 0.07,
+      "f": 1.192872989253929,
+      "success": 1.0
+    },
+    {
+      "qber": 0.09,
+      "f": 1.1975542370276169,
+      "success": 1.0
+    },
+    {
+      "qber": 0.11,
+      "f": 1.2208713987230517,
+      "success": 1.0
+    }
+  ],
+  "E7": {
+    "x25519_ms_per_key": 0.19872883000016373,
+    "bb84_sim_ms_per_exchange_1024q": 86.70971349994261,
+    "bb84_qubits_per_256bit_key": 914.9905704052046,
+    "x25519_public_bytes": 64
+  },
+  "_meta": {
+    "trials": 10,
+    "runtime_s": 23.5
+  }
+}

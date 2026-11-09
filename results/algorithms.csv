@@ -1,0 +1,8 @@
+algorithm,qubits,logical_depth,hardware_depth,hardware_2q_gates,success_ideal,success_noisy,classical_queries_worst,quantum_queries,top_ideal,top_noisy
+Bell state,2,3,7,1,1.0,0.982421875,,,11,11
+Deutsch-Jozsa n=3 (balanced),4,6,14,2,1.0,0.99853515625,5,1,101,101
+Deutsch-Jozsa n=3 (constant),4,4,7,0,1.0,0.981201171875,5,1,000,000
+Bernstein-Vazirani s=1011,5,7,15,3,1.0,0.95849609375,4,1,1011,1011
+Grover n=2 (find 11),2,12,10,2,1.0,0.974609375,3,1,11,11
+Grover n=3 (find 101),3,22,134,37,0.94384765625,0.799560546875,7,2,101,101
+Grover n=4 (find 0110),4,38,504,161,0.95849609375,0.510498046875,15,3,0110,0110

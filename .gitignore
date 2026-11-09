@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+results/ibm_runs.csv
+
+# Thesis, paper and other private documents (not for publication)
+*.docx

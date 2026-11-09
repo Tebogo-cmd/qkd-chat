@@ -1,0 +1,5 @@
+method,qubits_per_circuit,circuits,seconds_per_1024_qubits
+stabilizer,256,4,0.06969782733331915
+matrix_product_state,256,4,0.05189511733332589
+statevector,16,64,0.36737638366666187
+density_matrix,8,128,0.7249179756666612

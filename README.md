@@ -1,8 +1,5 @@
 # QKD Chat - a hybrid quantum-classical BB84 application built with Qiskit
 
-Primary deliverable for the BEngTech (Hons) Computer Engineering research project
-**"An Exploratory Analysis of Quantum Computing Programming Using Qiskit"**
-(T. Diraditsile, CPUT, supervisor Mr A. Wyngaard, 2026).
 
 Alice and Bob establish secret keys with the **BB84 quantum key distribution protocol**
 over a quantum channel simulated with **Qiskit Aer**, then chat over a classical channel

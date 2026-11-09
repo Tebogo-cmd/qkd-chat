@@ -3,7 +3,8 @@
 > **Status: first summary.** This file counts every exchange that did not produce a key as "aborted". The later
 > analysis (thesis and paper) separates *threshold aborts* (sampled QBER above 11 %, i.e. Eve detected) from
 > exchanges where privacy amplification left *no secret bits*. At f = 0.3, all three "aborts" below were
-> no-secret-bits outcomes, not detections. The E5b finite-size data are in `results/e5b_finite_size.csv`.
+> no-secret-bits outcomes, not detections. The `outcome` column in `results/*.csv` gives the breakdown, and the
+> E5b finite-size data are in `results/e5b_finite_size.csv`.
 
 All numbers below come from `python experiments/run_experiments.py` (10 trials per point, seeded)
 and `python algorithms/quantum_algorithms.py`. Raw data is in `results/*.csv` and figures in `results/*.png`.

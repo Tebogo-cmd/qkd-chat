@@ -1,6 +1,8 @@
 # QKD Chat - a hybrid quantum-classical BB84 application built with Qiskit
 
-
+Primary deliverable for the BEngTech (Hons) Computer Engineering research project
+**"An Exploratory Analysis of Quantum Computing Programming Using Qiskit"**
+(T. Diraditsile, CPUT, supervisor Mr A. Wyngaard, 2026).
 
 Alice and Bob establish secret keys with the **BB84 quantum key distribution protocol**
 over a quantum channel simulated with **Qiskit Aer**, then chat over a classical channel
@@ -34,7 +36,7 @@ Beyond the brief, it also includes:
   comes from hardware.
 * **Quantum RNG option** (`--qrng`): Alice's and Bob's random choices come from H-and-measure circuits.
   On a simulator this is still pseudo-random underneath; all reported experiments used the seeded pseudo-random source.
-* **Experiments** E1-E7 with CSVs and figures in `results/`, plus a study of four selected quantum algorithms (objective 3).
+* **Experiments** E1-E7 and E5b (finite-size) with CSVs and figures in `results/`, plus a study of four selected quantum algorithms (objective 3).
 * **27 automated tests** (`pytest`).
 
 ## Installation
@@ -43,10 +45,9 @@ Requires Python 3.10+ (developed and tested on Python 3.13, Qiskit 2.6, Qiskit A
 `requirements.txt` pins these versions so that the results can be reproduced).
 
 ```bash
-git clone https://github.com/Tebogo-cmd/qkd-chat.git && cd qkd-chat
+git clone https://github.com/<your-username>/qkd-chat.git && cd qkd-chat
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-pip install -e .
 pytest -q                                              # 27 passed
 ```
 
@@ -70,20 +71,15 @@ Command-line options: `--mode otp|aes --qubits N --eve F --noise P --readout P -
 ## Reproducing the results
 
 ```bash
-python experiments/run_experiments.py          # E1-E7, ~3 min -> results/*.csv, *.png, summary.json
+python experiments/run_experiments.py          # E1-E7 and E5b -> results/*.csv, *.png, summary.json
 python algorithms/quantum_algorithms.py        # Bell, Deutsch-Jozsa, Bernstein-Vazirani, Grover
 python experiments/classical_baseline.py       # X25519 + AES-GCM classical counterpart
 python experiments/run_on_ibm.py --backend fake_torino --qubits 500   # IBM Runtime path, local dry run
 ```
 
-All experiments use fixed seeds. Two notes on the data in `results/`:
-
-* `results/e5b_finite_size.csv` (E5b, the finite-size experiment under the IBM Torino noise snapshot) is the
-  per-run record of that experiment. The version of `run_experiments.py` that produced it is not included in
-  this repository, so E5b cannot yet be regenerated from the scripts here.
-* The CSV files for E1 and E2 record every exchange without a key as `aborted`. The thesis and paper split
-  these into threshold aborts (sampled QBER above 11 %, i.e. Eve detected) and exchanges where privacy
-  amplification left no secret bits; that breakdown also came from the later script version.
+All experiments use fixed seeds, so rerunning the scripts reproduces the files in `results/`. Each exchange in
+E1, E2 and E5b is labelled with its outcome: `key`, `threshold` (sampled QBER above 11 %, i.e. Eve detected) or
+`no_secret_bits` (QBER below the threshold, but privacy amplification left no secret bits).
 
 To run on a real QPU, save an IBM Quantum API key once
 (`QiskitRuntimeService.save_account(channel="ibm_quantum_platform", token="...")`), then run
@@ -116,6 +112,7 @@ docs/                    ARCHITECTURE.md, EVALUATION.md, DEVELOPMENT_LOG.md
 * [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md): how the code maps onto the conceptual design (proposal Figure 6), the design decisions behind it, and its limitations.
 * [`docs/EVALUATION.md`](docs/EVALUATION.md): a first summary of the measured results, organised by research question and evaluation criterion.
 * [`docs/DEVELOPMENT_LOG.md`](docs/DEVELOPMENT_LOG.md): the log template and the development observations, which were compiled after the build.
+
 
 
 ## Licence

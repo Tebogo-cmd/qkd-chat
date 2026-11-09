@@ -553,5 +553,43 @@
   "_meta": {
     "trials": 10,
     "runtime_s": 23.5
-  }
+  },
+  "E5b": [
+    {
+      "n_qubits": 300,
+      "key": 0,
+      "threshold": 1,
+      "no_secret_bits": 9,
+      "verify_failed": 0,
+      "mean_qber_true": 0.047672897364592695,
+      "mean_final_length": 0.0
+    },
+    {
+      "n_qubits": 500,
+      "key": 4,
+      "threshold": 0,
+      "no_secret_bits": 6,
+      "verify_failed": 0,
+      "mean_qber_true": 0.046643860358408666,
+      "mean_final_length": 8.4
+    },
+    {
+      "n_qubits": 1000,
+      "key": 9,
+      "threshold": 0,
+      "no_secret_bits": 1,
+      "verify_failed": 0,
+      "mean_qber_true": 0.050169023280392265,
+      "mean_final_length": 52.8
+    },
+    {
+      "n_qubits": 2048,
+      "key": 10,
+      "threshold": 0,
+      "no_secret_bits": 0,
+      "verify_failed": 0,
+      "mean_qber_true": 0.047271244145901864,
+      "mean_final_length": 230.6
+    }
+  ]
 }

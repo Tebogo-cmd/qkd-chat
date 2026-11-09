@@ -13,6 +13,7 @@ Experiments
     E3  Probability of detecting Eve vs. number of sampled bits
     E4  Simulation time vs. key size, and simulator method comparison
     E5  Realistic IBM-device noise (fake backends) - QBER and key rate
+    E5b Finite-size effect: exchange outcome vs. qubits sent under IBM Torino noise
     E6  Reconciliation efficiency of Cascade vs. QBER
     E7  Classical baseline (X25519 Diffie-Hellman) vs. BB84 - time per 256-bit key
 """
@@ -60,6 +61,19 @@ def mean_ci(xs) -> tuple[float, float]:
     return float(xs.mean()), float(1.96 * xs.std(ddof=1) / math.sqrt(len(xs)))
 
 
+def outcome(r) -> str:
+    """Why an exchange ended: key produced, or which of the three abort conditions fired."""
+    if not r.aborted:
+        return "key"
+    if "exceeds" in r.abort_reason:
+        return "threshold"          # sampled QBER > 11 % -> eavesdropper suspected
+    if "privacy amplification" in r.abort_reason:
+        return "no_secret_bits"     # QBER below threshold, but PA length m <= 0
+    if "verification" in r.abort_reason:
+        return "verify_failed"      # keys still differ after all reconciliation rounds
+    return "other"
+
+
 # --------------------------------------------------------------------------- E1
 def e1_eve(trials: int, n: int) -> None:
     print("E1  QBER vs Eve intercept fraction")
@@ -70,7 +84,8 @@ def e1_eve(trials: int, n: int) -> None:
             eve = Eavesdropper(float(f)) if f > 0 else None
             r = BB84Protocol(eve=eve, seed=1000 + 37 * t + int(100 * f)).run(n)
             rows.append({"intercept_fraction": f, "trial": t, "qber_estimate": r.qber_estimate,
-                         "qber_true": r.qber_true, "aborted": int(r.aborted), "final_length": r.final_length,
+                         "qber_true": r.qber_true, "aborted": int(r.aborted), "outcome": outcome(r),
+                         "final_length": r.final_length, "n_reconciled": r.n_reconciled, "leaked_ec": r.leaked_ec,
                          "eve_agreement_before_pa": r.eve_agreement_before_pa,
                          "eve_agreement_after_pa": r.eve_agreement_after_pa})
     save_csv("e1_qber_vs_eve", rows)
@@ -124,7 +139,7 @@ def e2_noise(trials: int, n: int) -> None:
         for t in range(trials):
             r = BB84Protocol(noise=noise, seed=2000 + 41 * t + int(1000 * p)).run(n)
             rows.append({"channel_p": p, "trial": t, "qber_estimate": r.qber_estimate, "qber_true": r.qber_true,
-                         "expected_qber": noise.expected_qber(), "aborted": int(r.aborted),
+                         "expected_qber": noise.expected_qber(), "aborted": int(r.aborted), "outcome": outcome(r),
                          "final_length": r.final_length, "key_rate": r.key_rate, "leaked_ec": r.leaked_ec,
                          "errors_corrected": r.errors_corrected})
     save_csv("e2_noise", rows)
@@ -280,6 +295,33 @@ def e5_hardware(trials: int, n: int) -> None:
     plt.close(fig)
 
 
+# --------------------------------------------------------------------------- E5b
+def e5b_finite_size(trials: int) -> None:
+    """Finite-size effect: how many qubits does an exchange need under IBM Torino noise?"""
+    print("E5b Finite-size effect under fake_torino noise")
+    sim = QuantumChannelSimulator(hardware="fake_torino", seed=55)  # load the device model once
+    rows = []
+    for n in (300, 500, 1000, 2048):
+        for t in range(trials):
+            proto = BB84Protocol(seed=5500 + 13 * t + n)
+            proto.simulator = sim
+            r = proto.run(n)
+            rows.append({"n_qubits": n, "trial": t, "qber_estimate": r.qber_estimate, "qber_true": r.qber_true,
+                         "n_sample": r.n_sample, "n_reconciled": r.n_reconciled, "leaked_ec": r.leaked_ec,
+                         "outcome": outcome(r), "final_length": r.final_length, "key_rate": r.key_rate})
+        sub = [r for r in rows if r["n_qubits"] == n]
+        print(f"    n={n}: keys {sum(r['outcome'] == 'key' for r in sub)}/{trials}, "
+              f"outcomes {sorted({r['outcome'] for r in sub})}")
+    save_csv("e5b_finite_size", rows)
+    SUMMARY["E5b"] = [
+        {"n_qubits": n, **{o: sum(r["outcome"] == o for r in rows if r["n_qubits"] == n)
+                           for o in ("key", "threshold", "no_secret_bits", "verify_failed")},
+         "mean_qber_true": mean_ci([r["qber_true"] for r in rows if r["n_qubits"] == n])[0],
+         "mean_final_length": mean_ci([r["final_length"] for r in rows if r["n_qubits"] == n])[0]}
+        for n in (300, 500, 1000, 2048)
+    ]
+
+
 # --------------------------------------------------------------------------- E6
 def e6_cascade(trials: int) -> None:
     print("E6  Cascade efficiency")
@@ -340,7 +382,7 @@ def main() -> None:
     style()
     OUT.mkdir(exist_ok=True)
     trials = 3 if args.quick else 10
-    run = set(args.only or ["e1", "e2", "e3", "e4", "e5", "e6", "e7"])
+    run = set(args.only or ["e1", "e2", "e3", "e4", "e5", "e5b", "e6", "e7"])
     t0 = time.time()
     if "e1" in run:
         e1_eve(trials, 2048)
@@ -352,6 +394,8 @@ def main() -> None:
         e4_scaling(3 if not args.quick else 1)
     if "e5" in run:
         e5_hardware(3 if not args.quick else 1, 2048)
+    if "e5b" in run:
+        e5b_finite_size(10 if not args.quick else 3)
     if "e6" in run:
         e6_cascade(trials)
     if "e7" in run:
